@@ -1,3 +1,15 @@
-<section class="memory-game">
-    <app-card *ngFor="let item of cardsList" class="memory-card" attr.data-card="{{item.dataCard}}" [image]="item.image" (click)="flipCard($event)"></app-card>
-</section>
+<div class="container-fluid height-100">
+    <div class="col-10 mx-auto mt-5">
+        <section *ngIf="countHits == 4" class="col-9 mx-auto p-5">
+            <h4 class="text-center winner">Terminado</h4>
+            <p class="text-center"><i class="btn-danger rounded-circle fas fa-redo-alt p-4" (click)="reload()"></i></p>
+        </section>
+        <section *ngIf="countHits < 4" class="col-3 mx-auto">
+            <h1 class="bg-light text-center border rounded">{{countHits}}</h1>
+        </section>
+        <section class="memory-game">
+            <app-card *ngFor="let item of cardsList" class="memory-card" [attr.data-card]="item.dataCard" [image]="item.image" (click)="flipCard($event)" [style.order]="item.order"></app-card>
+        </section>
+
+    </div>
+</div>
