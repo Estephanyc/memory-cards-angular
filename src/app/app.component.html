@@ -1,0 +1,3 @@
+<section class="memory-game">
+    <app-card *ngFor="let item of cardsList" class="memory-card" attr.data-card="{{item.dataCard}}" [image]="item.image" (click)="flipCard($event)"></app-card>
+</section>
