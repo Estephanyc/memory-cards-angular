@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
       this.firstCard.classList.remove('flip');
       this.secondCard.classList.remove('flip');
       this.resetBoard();
-    }, 800);
+    }, 400);
   }
 
   resetBoard() {
